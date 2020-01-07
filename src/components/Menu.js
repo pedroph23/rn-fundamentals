@@ -7,6 +7,11 @@ import React from 'react';
 import {Text} from 'react-native';
 import Simple  from './Simple.js'
 import EvenOdd from './EvenOdd.js';
+import Counter from './Counter.js';
+import Plataforms from './Plataforms.js';
+import ValidProps from './ValidProps.js';
+import Event from './Event.js';
+
 import { Invert, MegaSena } from './Multi.js';
 
 const Menu = createDrawerNavigator({
@@ -29,11 +34,32 @@ const Menu = createDrawerNavigator({
         }
     },
     Simple: {
-        screen: () => <Text> Oi </Text>,
+        screen: () => <Text> Simple Component </Text>,
         navigationOptions: {
             title: 'Simple'
         }
     }, 
+    Counter: {
+      screen: () => <Counter number={0} />,
+      navigationOptions: {
+          title: 'Counter'
+      }
+  },
+    Plataforms:{
+        screen: Plataforms,
+        navigationOptions: {
+        title: 'Check Plataform'
+        }
+    },
+    ValidProps: {
+        screen: () => <ValidProps ano={"20"} />,
+        navigationOptions: {
+            title: 'Validate Props'
+        }
+    },
+    Event: {
+        screen: Event
+    }
 }, { drawerWidth: 300});
 
 export default createAppContainer(Menu);
